@@ -18,11 +18,11 @@ var game = {
     possibleScore: 0,
     index : 0,
     choices : null,
-    choiceSets :    [['1','2','3','4'],['1.','2.','3.','4.'],['1.','2.','3.','4.'],
-                    ['1.','2.','3.','4.'],['1.','2.','3.','4.'],['1.','2.','3.','4.'],
-                    ['1.','2.','3.','4.'],['1.','2.','3.','4.'],['1.','2.','3.','4.'],
+    choiceSets :    [['100 Million Years','2','3','4'],['1.','2.','3.','4.'],['1.','Fungus','3.','4.'],
+                    ['1.','2.','3.','Female'],['45-60 days','2.','3.','4.'],['A Macintosh II Computer','2.','3.','4.'],
+                    ['30 years','2.','3.','4.'],['1.','Caterpillars','3.','4.'],['1.','2.','3.','4.'],
                     ['1.','2.','3.','4.']],
-    questions : ['First Question?','Second Question','Third Question',4,5,6,7,8,9,10],
+    questions : ['How long have ants existed on Earth?','How large is the largest colony of ants?','What do carpenter ants eat?','What sex are worker ants?','What is the lifespan of a worker?',"What is the estimated processing power of an ant's brain","How long can an ant queen live?",'What species of insects have ants "domesticated"?','What is the largest animal an ant has been recorded eating?','How many ants are estimated to live in the world?'],
     answers : [1,2,3,4,1,1,1,1,1,1],
 
     finish: function(){
