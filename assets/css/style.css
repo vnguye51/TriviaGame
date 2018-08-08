@@ -1,0 +1,65 @@
+*{  
+    box-sizing: border-box;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+body{
+    background-color: lightcyan;
+}
+
+#time{
+    font-family: 'Roboto', sans-serif;
+    font-size:28px;
+}
+
+#main{
+    padding: 10px;
+    background-color: palegoldenrod;
+    margin: 100px;
+}
+
+#question{
+    font-family: 'Roboto', sans-serif;
+    font-size: 38px;
+}
+
+.choice{
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    text-align: left;
+}
+
+:hover.choice{
+    background-color:greenyellow;
+}
+
+#answerbox{
+    font-family: 'Roboto', sans-serif;
+    margin: 20px;
+    padding: 10px;
+    background-color: royalblue;
+}
+
+#title{
+    font-family: 'Roboto', sans-serif;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+#correct{
+    font-family: 'Roboto', sans-serif;
+    font-size: 48px;
+}
+
+#restart{
+    font-size: 36px;
+    padding: 10px;
+    margin: 10px;
+    background-color: royalblue;
+}
+
+:hover#restart{
+    background-color: rgb(28, 58, 148);
+}
