@@ -18,18 +18,21 @@ var game = {
     possibleScore: 0,
     index : 0,
     choices : null,
-    choiceSets :    [['100 Million Years','2','3','4'],['1.','2.','3.','4.'],['1.','Fungus','3.','4.'],
-                    ['1.','2.','3.','Female'],['45-60 days','2.','3.','4.'],['A Macintosh II Computer','2.','3.','4.'],
-                    ['30 years','2.','3.','4.'],['1.','Caterpillars','3.','4.'],['1.','2.','3.','4.'],
-                    ['1.','2.','3.','4.']],
-    questions : ['How long have ants existed on Earth?','How large is the largest colony of ants?','What do carpenter ants eat?','What sex are worker ants?','What is the lifespan of a worker?',"What is the estimated processing power of an ant's brain","How long can an ant queen live?",'What species of insects have ants "domesticated"?','What is the largest animal an ant has been recorded eating?','How many ants are estimated to live in the world?'],
-    answers : [1,2,3,4,1,1,1,1,1,1],
+    choiceSets :    [['Two men arguing', 'Two frogs mating', 'A rabbit', 'A crying kid'],['Left', 'Right', 'Ambidextrous'],['Breath of the Wild', 'Skyward Sword', 'The Legend of Zelda', 'Ocarina of Time'],
+                    ['Zelda Williams','Zelda Fitzgerald','Zelda Spellman', 'Zelda Wynn Valdez'],['6','7','8','9'],['Koji Kondo', 'Shigeru Miyamoto', 'Tekashi Tezuka', 'Eiji Aonuma'],
+                    ['clowns','aliens','yetis','zombies'],['Kevin Hart', 'Robin Williams', 'Tom Cruise', 'Jackie Chan'],['Indiana Jones', 'Star Wars', 'Wizards', 'Snow White and the Seven Dwarves'],
+                    ['Four Swords', 'The Minish Cap', 'Skyward Sword', 'The Legend of Zelda']],
+    questions : ['In Wind Waker what is the voice of a Chu Chu recorded from?','Is Link typically depicted as left or right-handed?',
+    'The timeline for the games were officially broken into three branches starting at which game?',
+    "Who is Zelda named after?",'Excluding remakes and the CD-i games how many times has Link fought Ganon or Ganondorf)?',"Who created The Legend of Zelda series?","What did Breath of the Wild almost have?",
+    "Who named his daughter after Zelda?",'What movie gave inspiration to the Legend of Zelda?','Which one of these games is chronologically last?'],
+    answers : [1,1,4,2,4,2,2,2,1,4],
 
     finish: function(){
         clearInterval(timer.timerID)
         $('#restart').removeAttr('hidden')
         $('#question').attr('hidden',true)
-        $('#image').attr('src','https://i0.wp.com/www.betameme.com/wp-content/uploads/2018/02/congratulations-meme.jpg?resize=397%2C293')
+        $('#image').attr('src','assets/images/End.gif')
         $('#correct').html(this.score + '/' + this.possibleScore)
     },
 
@@ -54,21 +57,23 @@ var game = {
         $('#time').attr('hidden',true)
         $('#correct').removeAttr('hidden')
         $('#image').removeAttr('hidden')
-        setTimeout(game.nextQuestion,2000)
+        setTimeout(game.nextQuestion,2500)
+        
         if (choice == ''){
-            $('#image').attr('src','https://media0.giphy.com/media/l3q2K5jinAlChoCLS/giphy.gif')
+            $('#image').attr('src','assets/images/Fail' + (game.index+1) + '.gif')
             $('#correct').html("TIME'S UP")
 
         }
         else if (choice == this.answers[this.index]){
-            $('#image').attr('src','https://media1.giphy.com/media/l41lZxzroU33typuU/giphy.gif')
+            $('#image').attr('src','assets/images/Success' + (game.index+1) + '.gif')
             $('#correct').html('CORRECT')
             this.score++
         }
         else{
-            $('#image').attr('src','https://media0.giphy.com/media/l3q2K5jinAlChoCLS/giphy.gif')
+            $('#image').attr('src','assets/images/Fail' + (game.index+1) + '.gif')
             $('#correct').html('WRONG')
         }
+        console.log($('#image').attr('src'))
     },
 
     start: function(){
@@ -90,7 +95,7 @@ var game = {
     populateChoices: function(){
         this.choices = this.choiceSets[this.index]
         for(var i=1;i<5;i++){
-            $('#choice' + i).html(this.choices[i-1])
+            $('#choice' + i).html(i + '.\t' + this.choices[i-1])
         }
     }
 }
